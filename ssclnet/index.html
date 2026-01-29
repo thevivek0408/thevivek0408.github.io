@@ -3,15 +3,100 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://huggingface.co/spaces/thevivek012/SSCLNet-Medical-Analysis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to SSCLNet...</title>
+    <title>SSCLNet - Medical Image Analysis</title>
+
+    <!-- 1. Open Graph Tags: Makes the link look professional when shared on LinkedIn/WhatsApp -->
+    <meta property="og:title" content="SSCLNet Medical Analysis">
+    <meta property="og:description"
+        content="Click to access the SSCLNet Medical Image Analysis dashboard on Hugging Face Spaces.">
+    <meta property="og:image"
+        content="https://huggingface.co/spaces/thevivek012/SSCLNet-Medical-Analysis/resolve/main/cover-image.png">
+    <!-- Optional: Add a real URL if you have one -->
+    <meta property="og:url" content="https://vivekvardhan.me/ssclnet">
+    <meta property="og:type" content="website">
+
+    <!-- 2. Immediate Meta Refresh (0s) -->
+    <meta http-equiv="refresh" content="0; url=https://huggingface.co/spaces/thevivek012/SSCLNet-Medical-Analysis">
+
+    <style>
+        /* 3. Modern Dark Theme & Centered Design */
+        body {
+            background-color: #0d1117;
+            /* GitHub Dark Dimmed */
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #58a6ff;
+            /* Accent Color */
+        }
+
+        p {
+            font-size: 16px;
+            color: #8b949e;
+        }
+
+        /* 4. Simple Loading Spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #30363d;
+            border-top: 4px solid #58a6ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <p>Redirecting to <a href="https://huggingface.co/spaces/thevivek012/SSCLNet-Medical-Analysis">SSCLNet Medical
-            Analysis</a>...
-    </p>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>SSCLNet</h1>
+        <p>Redirecting you to the generic Medical Analysis Dashboard...</p>
+        <p><small>If you are not redirected properly, <a
+                    href="https://huggingface.co/spaces/thevivek012/SSCLNet-Medical-Analysis">click here</a>.</small>
+        </p>
+    </div>
+
+    <!-- 5. JavaScript Fallback: redirect immediately if Meta Refresh is blocked/slow -->
+    <script>
+        window.location.href = "https://huggingface.co/spaces/thevivek012/SSCLNet-Medical-Analysis";
+    </script>
 </body>
 
 </html>
