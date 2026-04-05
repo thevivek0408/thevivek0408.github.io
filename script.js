@@ -15,6 +15,10 @@ let scene;
 let camera;
 let modelGroup;
 let fallbackGroup;
+let ambientLight;
+let keyLight;
+let fillLight;
+let stars;
 let mouseTargetX = 0;
 let mouseTargetY = 0;
 let rafId;
@@ -111,23 +115,23 @@ function initSoftParallax() {
 }
 
 function addLights() {
-  const ambient = new THREE.AmbientLight(0x9ec6ff, 1.3);
-  const key = new THREE.DirectionalLight(0x73f8d8, 1.1);
-  const fill = new THREE.DirectionalLight(0x6ea6ff, 1);
+  ambientLight = new THREE.AmbientLight(0x8eb4ff, 0.95);
+  keyLight = new THREE.DirectionalLight(0x36ddff, 1.35);
+  fillLight = new THREE.DirectionalLight(0xff5b68, 0.95);
 
-  key.position.set(4, 5, 3);
-  fill.position.set(-4, -2, -2);
+  keyLight.position.set(4, 5, 3);
+  fillLight.position.set(-4, -2, -2);
 
-  scene.add(ambient, key, fill);
+  scene.add(ambientLight, keyLight, fillLight);
 }
 
 function createFallbackObjects() {
   fallbackGroup = new THREE.Group();
 
   const materials = [
-    new THREE.MeshStandardMaterial({ color: 0x6df5d3, metalness: 0.55, roughness: 0.32 }),
-    new THREE.MeshStandardMaterial({ color: 0x58b9ff, metalness: 0.65, roughness: 0.28 }),
-    new THREE.MeshStandardMaterial({ color: 0x93a4ff, wireframe: true })
+    new THREE.MeshStandardMaterial({ color: 0x2ce2ff, metalness: 0.62, roughness: 0.25 }),
+    new THREE.MeshStandardMaterial({ color: 0xff5b68, metalness: 0.68, roughness: 0.23 }),
+    new THREE.MeshStandardMaterial({ color: 0xb4c4ff, wireframe: true })
   ];
 
   const knot = new THREE.Mesh(new THREE.TorusKnotGeometry(0.52, 0.16, 210, 30), materials[0]);
@@ -156,7 +160,7 @@ function loadMainModel() {
     (gltf) => {
       modelGroup = gltf.scene;
       modelGroup.scale.set(1.4, 1.4, 1.4);
-      modelGroup.position.set(0.35, -1.28, -0.45);
+      modelGroup.position.set(0.35, -1.2, -0.45);
       modelGroup.rotation.y = -0.6;
       scene.add(modelGroup);
       createFallbackObjects();
@@ -196,9 +200,9 @@ function initThreeScene() {
   }
 
   starGeometry.setAttribute('position', new THREE.BufferAttribute(points, 3));
-  const stars = new THREE.Points(
+  stars = new THREE.Points(
     starGeometry,
-    new THREE.PointsMaterial({ color: 0xb8ddff, size: 0.017, transparent: true, opacity: 0.65 })
+    new THREE.PointsMaterial({ color: 0xb9dcff, size: 0.02, transparent: true, opacity: 0.74 })
   );
   scene.add(stars);
 
@@ -208,27 +212,41 @@ function initThreeScene() {
     const t = clock.getElapsedTime();
 
     if (modelGroup) {
-      modelGroup.rotation.y += 0.0024;
-      modelGroup.rotation.x = Math.sin(t * 0.6) * 0.08;
-      modelGroup.position.y = -1.28 + Math.sin(t * 0.9) * 0.07;
+      modelGroup.rotation.y += 0.0032;
+      modelGroup.rotation.x = Math.sin(t * 0.8) * 0.11;
+      modelGroup.position.y = -1.2 + Math.sin(t * 1.1) * 0.09;
     }
 
     if (fallbackGroup) {
-      fallbackGroup.children[0].rotation.x += 0.004;
-      fallbackGroup.children[0].rotation.y += 0.005;
+      fallbackGroup.children[0].rotation.x += 0.006;
+      fallbackGroup.children[0].rotation.y += 0.007;
 
-      fallbackGroup.children[1].rotation.y -= 0.004;
-      fallbackGroup.children[1].rotation.z += 0.003;
+      fallbackGroup.children[1].rotation.y -= 0.005;
+      fallbackGroup.children[1].rotation.z += 0.004;
 
-      fallbackGroup.children[2].rotation.z += 0.0022;
-      fallbackGroup.position.y = Math.sin(t * 0.8) * 0.06;
+      fallbackGroup.children[2].rotation.z += 0.0035;
+      fallbackGroup.position.y = Math.sin(t * 1.2) * 0.08;
     }
 
-    camera.position.x += ((mouseTargetX * 0.42) - camera.position.x) * 0.03;
-    camera.position.y += ((-mouseTargetY * 0.3) - camera.position.y) * 0.03;
+    if (keyLight && fillLight && ambientLight) {
+      keyLight.intensity = 1.2 + Math.sin(t * 1.4) * 0.2;
+      fillLight.intensity = 0.85 + Math.cos(t * 1.2) * 0.15;
+      ambientLight.intensity = 0.9 + Math.sin(t * 0.6) * 0.08;
+
+      keyLight.position.x = 3.5 + Math.cos(t * 0.7) * 1.1;
+      fillLight.position.y = -2 + Math.sin(t * 0.9) * 1.2;
+    }
+
+    const cameraShakeX = Math.sin(t * 1.9) * 0.015;
+    const cameraShakeY = Math.cos(t * 1.5) * 0.012;
+    camera.position.x += ((mouseTargetX * 0.58 + cameraShakeX) - camera.position.x) * 0.04;
+    camera.position.y += ((-mouseTargetY * 0.42 + cameraShakeY) - camera.position.y) * 0.04;
     camera.lookAt(0, 0, 0);
 
-    stars.rotation.y += 0.0007;
+    if (stars) {
+      stars.rotation.y += 0.0013;
+      stars.rotation.x = Math.sin(t * 0.2) * 0.06;
+    }
     renderer.render(scene, camera);
   };
 
