@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siripuram Vivek Vardhan — Developer & Creator</title>
     <meta name="description" content="Portfolio of Siripuram Vivek Vardhan — Full-Stack Developer, AI/ML Enthusiast, and Open Source Contributor from India.">
+    <meta property="og:title" content="Siripuram Vivek Vardhan — Developer & Creator">
+    <meta property="og:description" content="Full-Stack Developer, AI/ML Enthusiast, and Open Source Contributor from India.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/66245161?v=4">
+    <meta property="og:url" content="https://vivekvardhan.in">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Siripuram Vivek Vardhan — Developer & Creator">
+    <meta name="twitter:description" content="Full-Stack Developer, AI/ML Enthusiast, and Open Source Contributor from India.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/66245161?v=4">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,38 +23,163 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
     <script>
         tailwind.config = {
-            theme: { extend: { fontFamily: { inter: ['Inter','sans-serif'], bricolage: ['Bricolage Grotesque','sans-serif'] } } }
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        bricolage: ['Bricolage Grotesque', 'sans-serif']
+                    },
+                    fontWeight: {
+                        300: '300',
+                        500: '500'
+                    }
+                }
+            }
         }
     </script>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{background:#050505;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-        .font-bricolage{font-family:'Bricolage Grotesque',sans-serif}
-        .starfield{background-image:radial-gradient(1px 1px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 40px 70px,#fff,transparent),radial-gradient(1.5px 1.5px at 90px 40px,#fff,transparent),radial-gradient(1px 1px at 130px 80px,#fff,transparent),radial-gradient(1.5px 1.5px at 160px 30px,#fff,transparent),radial-gradient(1px 1px at 50px 160px,#fff,transparent),radial-gradient(1.5px 1.5px at 100px 120px,#fff,transparent),radial-gradient(1px 1px at 180px 150px,#fff,transparent);background-size:200px 200px;opacity:.2}
-        .grid-overlay{background-image:linear-gradient(to right,rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px}
-        @keyframes fadeInUpBlur{0%{opacity:0;transform:translateY(20px);filter:blur(10px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
-        .anim-in{animation:fadeInUpBlur 1s cubic-bezier(.2,.8,.2,1) both}
-        .delay-1{animation-delay:75ms}.delay-2{animation-delay:150ms}.delay-3{animation-delay:300ms}.delay-4{animation-delay:500ms}.delay-5{animation-delay:700ms}.delay-6{animation-delay:900ms}
-        @keyframes ping{75%,100%{transform:scale(2);opacity:0}}.ping{animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite}
-        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}.float{animation:float 6s ease-in-out infinite}
-        @keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-        .gradient-text{background:linear-gradient(135deg,#fef08a,#fb923c,#f97316,#fef08a);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradient-shift 4s ease infinite}
-        .glass-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);backdrop-filter:blur(12px);transition:all .5s ease}
-        .glass-card:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);box-shadow:0 0 30px rgba(249,115,22,.06)}
-        .cta-btn{background:linear-gradient(to top,#f97316,#fb923c,#fef08a);color:#050505;font-weight:600;transition:all .3s ease;box-shadow:0 0 40px -5px rgba(249,115,22,.6)}
-        .cta-btn:hover{transform:scale(1.05);box-shadow:0 0 50px -5px rgba(249,115,22,.8)}
-        .sec-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;transition:all .3s ease}
-        .sec-btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
-        .section-reveal{opacity:0;transform:translateY(40px);filter:blur(8px)}
-        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#050505}::-webkit-scrollbar-thumb{background:rgba(249,115,22,.3);border-radius:3px}
-        .mobile-nav{transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1)}.mobile-nav.open{transform:translateX(0)}
-        .timeline-line{background:linear-gradient(to bottom,transparent,#f97316,transparent)}
-        .glow-orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}
-        .toast{transform:translateY(100px);opacity:0;transition:all .4s cubic-bezier(.2,.8,.2,1)}.toast.show{transform:translateY(0);opacity:1}
-        .tab-btn.active{background:rgba(249,115,22,.15);border-color:rgba(249,115,22,.4);color:#fb923c}
-        #three-canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
-        .project-img{transition:transform .7s ease,filter .7s ease;filter:brightness(.75) saturate(.85)}
-        .project-card:hover .project-img{transform:scale(1.08);filter:brightness(1) saturate(1.1)}
+        * { margin: 0; padding: 0; box-sizing: border-box }
+        body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased }
+        .font-bricolage { font-family: 'Bricolage Grotesque', sans-serif }
+
+        .starfield {
+            background-image:
+                radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 40px 70px, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 160px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 50px 160px, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 100px 120px, #fff, transparent),
+                radial-gradient(1px 1px at 180px 150px, #fff, transparent);
+            background-size: 200px 200px;
+            opacity: .2
+        }
+        .grid-overlay {
+            background-image:
+                linear-gradient(to right, rgba(255,255,255,.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,.03) 1px, transparent 1px);
+            background-size: 24px 24px
+        }
+
+        @keyframes fadeInUpBlur {
+            0% { opacity: 0; transform: translateY(20px); filter: blur(10px) }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0) }
+        }
+        .anim-in { animation: fadeInUpBlur 1s cubic-bezier(.2,.8,.2,1) both }
+        .delay-1 { animation-delay: 75ms }
+        .delay-2 { animation-delay: 150ms }
+        .delay-3 { animation-delay: 300ms }
+        .delay-4 { animation-delay: 500ms }
+        .delay-5 { animation-delay: 700ms }
+        .delay-6 { animation-delay: 900ms }
+
+        @keyframes ping {
+            75%, 100% { transform: scale(2); opacity: 0 }
+        }
+        .ping { animation: ping 1.5s cubic-bezier(0,0,.2,1) infinite }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) }
+            50% { transform: translateY(-12px) }
+        }
+        .float { animation: float 6s ease-in-out infinite }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #fef08a, #fb923c, #f97316, #fef08a);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 4s ease infinite
+        }
+
+        .glass-card {
+            background: rgba(255,255,255,.02);
+            border: 1px solid rgba(255,255,255,.06);
+            backdrop-filter: blur(12px);
+            transition: all .5s ease
+        }
+        .glass-card:hover {
+            background: rgba(255,255,255,.04);
+            border-color: rgba(255,255,255,.12);
+            box-shadow: 0 0 30px rgba(249,115,22,.06)
+        }
+
+        .cta-btn {
+            background: linear-gradient(to top, #f97316, #fb923c, #fef08a);
+            color: #050505;
+            font-weight: 600;
+            transition: all .3s ease;
+            box-shadow: 0 0 40px -5px rgba(249,115,22,.6)
+        }
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px -5px rgba(249,115,22,.8)
+        }
+
+        .sec-btn {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            color: #fff;
+            transition: all .3s ease
+        }
+        .sec-btn:hover {
+            background: rgba(255,255,255,.1);
+            border-color: rgba(255,255,255,.2)
+        }
+
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(8px)
+        }
+
+        ::-webkit-scrollbar { width: 6px }
+        ::-webkit-scrollbar-track { background: #050505 }
+        ::-webkit-scrollbar-thumb { background: rgba(249,115,22,.3); border-radius: 3px }
+
+        .mobile-nav { transform: translateX(100%); transition: transform .4s cubic-bezier(.2,.8,.2,1) }
+        .mobile-nav.open { transform: translateX(0) }
+
+        .timeline-line { background: linear-gradient(to bottom, transparent, #f97316, transparent) }
+        .glow-orb { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none }
+
+        .toast { transform: translateY(100px); opacity: 0; transition: all .4s cubic-bezier(.2,.8,.2,1) }
+        .toast.show { transform: translateY(0); opacity: 1 }
+
+        .tab-btn.active {
+            background: rgba(249,115,22,.15);
+            border-color: rgba(249,115,22,.4);
+            color: #fb923c
+        }
+
+        #three-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0 }
+
+        .project-img { transition: transform .7s ease, filter .7s ease; filter: brightness(.75) saturate(.85) }
+        .project-card:hover .project-img { transform: scale(1.08); filter: brightness(1) saturate(1.1) }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .float { animation: none }
+            .section-reveal { opacity: 1; transform: none; filter: none }
+        }
+
+        .hf-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            line-height: 1
+        }
     </style>
 </head>
 <body>
@@ -54,10 +188,13 @@
     <div class="glow-orb w-[600px] h-[600px] bg-orange-500/5 top-[-200px] right-[-200px] fixed z-0"></div>
     <div class="glow-orb w-[400px] h-[400px] bg-orange-500/3 bottom-[20%] left-[-100px] fixed z-0"></div>
 
-    <!-- Nav -->
+    <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#050505]/70 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 anim-in"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-sm font-bold text-black font-bricolage">V</div><span class="font-bricolage text-lg font-500 tracking-tight">vivekvardhan<span class="text-orange-400">.in</span></span></a>
+            <a href="#" class="flex items-center gap-3 anim-in">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-sm font-bold text-black font-bricolage">V</div>
+                <span class="font-bricolage text-lg font-500 tracking-tight">vivekvardhan<span class="text-orange-400">.in</span></span>
+            </a>
             <div class="hidden md:flex items-center gap-8 anim-in delay-1">
                 <a href="#about" class="text-xs text-neutral-400 hover:text-white transition-colors uppercase tracking-widest">About</a>
                 <a href="#skills" class="text-xs text-neutral-400 hover:text-white transition-colors uppercase tracking-widest">Skills</a>
@@ -66,13 +203,20 @@
                 <a href="#contact" class="text-xs text-neutral-400 hover:text-white transition-colors uppercase tracking-widest">Contact</a>
                 <a href="#contact" class="cta-btn px-5 py-2.5 rounded-full text-sm font-semibold">Let's Talk</a>
             </div>
-            <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10"><i data-lucide="menu" class="w-5 h-5"></i></button>
+            <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Mobile Nav -->
+    <!-- Mobile Navigation -->
     <div id="mobileNav" class="mobile-nav fixed inset-0 z-[60] bg-[#050505]/95 backdrop-blur-2xl flex flex-col">
-        <div class="flex items-center justify-between px-6 py-5"><span class="font-bricolage text-lg font-500">vivekvardhan<span class="text-orange-400">.in</span></span><button id="closeNav" class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10"><i data-lucide="x" class="w-5 h-5"></i></button></div>
+        <div class="flex items-center justify-between px-6 py-5">
+            <span class="font-bricolage text-lg font-500">vivekvardhan<span class="text-orange-400">.in</span></span>
+            <button id="closeNav" class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
         <div class="flex-1 flex flex-col items-center justify-center gap-8">
             <a href="#about" class="nav-link text-3xl font-bricolage font-300 text-neutral-400 hover:text-white transition-colors">About</a>
             <a href="#skills" class="nav-link text-3xl font-bricolage font-300 text-neutral-400 hover:text-white transition-colors">Skills</a>
@@ -83,7 +227,7 @@
         </div>
     </div>
 
-    <!-- HERO -->
+    <!-- ==================== HERO ==================== -->
     <section class="relative min-h-screen flex flex-col justify-center overflow-hidden">
         <canvas id="three-canvas"></canvas>
         <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] z-[1]"></div>
@@ -91,25 +235,50 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7">
                     <div class="anim-in delay-1 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-                        <span class="relative flex h-2.5 w-2.5"><span class="ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span></span>
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
+                        </span>
                         <span class="text-[11px] text-neutral-400 uppercase tracking-wider">Available for opportunities</span>
                     </div>
-                    <h1 class="anim-in delay-2 font-bricolage text-5xl sm:text-6xl lg:text-[76px] font-300 leading-[1.05] tracking-tight mb-6">Hi, I'm<br><span class="gradient-text font-500">Vivek Vardhan</span></h1>
-                    <p class="anim-in delay-3 text-lg text-neutral-400 leading-relaxed max-w-xl mb-2"><span class="text-white font-medium">Siripuram Vivek Vardhan</span> — a passionate <span class="text-white font-medium">Full-Stack Developer</span> & <span class="text-white font-medium">AI/ML Enthusiast</span> crafting digital experiences from India.</p>
-                    <p class="anim-in delay-4 text-sm text-neutral-500 mb-10 max-w-md">Building modern web apps, medical AI, multi-agent systems, and tools like <a href="https://vibox.app" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">vibox.app</a>.</p>
+                    <h1 class="anim-in delay-2 font-bricolage text-5xl sm:text-6xl lg:text-[76px] font-300 leading-[1.05] tracking-tight mb-6">
+                        Hi, I'm<br><span class="gradient-text font-500">Vivek Vardhan</span>
+                    </h1>
+                    <p class="anim-in delay-3 text-lg text-neutral-400 leading-relaxed max-w-xl mb-2">
+                        <span class="text-white font-medium">Siripuram Vivek Vardhan</span> — a passionate <span class="text-white font-medium">Full-Stack Developer</span> & <span class="text-white font-medium">AI/ML Enthusiast</span> crafting digital experiences from India.
+                    </p>
+                    <p class="anim-in delay-4 text-sm text-neutral-500 mb-10 max-w-md">
+                        Building modern web apps, medical AI, multi-agent systems, and tools like <a href="https://vibox.app" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">vibox.app</a>.
+                    </p>
                     <div class="anim-in delay-5 flex flex-wrap items-center gap-4">
-                        <a href="#projects" class="cta-btn px-8 py-4 rounded-full text-base inline-flex items-center gap-2">View My Work <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                        <a href="https://github.com/thevivek143" target="_blank" class="sec-btn px-8 py-4 rounded-full text-base inline-flex items-center gap-2"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
-                        <a href="mailto:siripuramvivekvardhan@gmail.com" class="sec-btn w-12 h-12 rounded-full flex items-center justify-center" title="Email"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                        <a href="#projects" class="cta-btn px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
+                            View My Work <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://github.com/thevivek143" target="_blank" class="sec-btn px-8 py-4 rounded-full text-base inline-flex items-center gap-2">
+                            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                        </a>
+                        <a href="mailto:siripuramvivekvardhan@gmail.com" class="sec-btn w-12 h-12 rounded-full flex items-center justify-center" title="Email">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </a>
                     </div>
                     <div class="anim-in delay-6 flex items-center gap-8 mt-14 pt-8 border-t border-white/5">
-                        <div><div class="text-3xl font-bricolage font-500 gradient-text" id="statProjects">0</div><div class="text-[11px] text-neutral-500 uppercase tracking-wider mt-1">Projects</div></div>
+                        <div>
+                            <div class="text-3xl font-bricolage font-500 gradient-text" id="statProjects">0</div>
+                            <div class="text-[11px] text-neutral-500 uppercase tracking-wider mt-1">Projects</div>
+                        </div>
                         <div class="w-px h-10 bg-white/10"></div>
-                        <div><div class="text-3xl font-bricolage font-500 gradient-text" id="statRepos">0</div><div class="text-[11px] text-neutral-500 uppercase tracking-wider mt-1">Repos</div></div>
+                        <div>
+                            <div class="text-3xl font-bricolage font-500 gradient-text" id="statRepos">0</div>
+                            <div class="text-[11px] text-neutral-500 uppercase tracking-wider mt-1">Repos</div>
+                        </div>
                         <div class="w-px h-10 bg-white/10"></div>
-                        <div><div class="text-3xl font-bricolage font-500 gradient-text" id="statTech">0</div><div class="text-[11px] text-neutral-500 uppercase tracking-wider mt-1">Technologies</div></div>
+                        <div>
+                            <div class="text-3xl font-bricolage font-500 gradient-text" id="statTech">0</div>
+                            <div class="text-[11px] text-neutral-500 uppercase tracking-wider mt-1">Technologies</div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="lg:col-span-5 flex justify-center anim-in delay-4">
                     <div class="relative float">
                         <div class="absolute -inset-8 bg-gradient-to-br from-orange-500/20 via-transparent to-orange-500/10 rounded-[40px] blur-2xl"></div>
@@ -124,40 +293,84 @@
                                 <p class="text-xs text-orange-400/70 mt-1">Full-Stack • AI/ML • India</p>
                             </div>
                             <div class="flex justify-center gap-3 mt-5">
-                                <a href="https://github.com/thevivek143" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-orange-500/30 transition-all"><i data-lucide="github" class="w-4 h-4 text-neutral-400"></i></a>
-                                <a href="https://linkedin.com/in/siripuramvivekvardhan" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-orange-500/30 transition-all"><i data-lucide="linkedin" class="w-4 h-4 text-neutral-400"></i></a>
-                                <a href="https://twitter.com/thevivek143" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-orange-500/30 transition-all"><i data-lucide="twitter" class="w-4 h-4 text-neutral-400"></i></a>
-                                <a href="https://huggingface.co/thevivek012" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-orange-500/30 transition-all"><svg class="w-4 h-4 text-neutral-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-3-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg></a>
+                                <a href="https://github.com/thevivek143" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-orange-500/30 transition-all">
+                                    <i data-lucide="github" class="w-4 h-4 text-neutral-400"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/siripuramvivekvardhan" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-orange-500/30 transition-all">
+                                    <i data-lucide="linkedin" class="w-4 h-4 text-neutral-400"></i>
+                                </a>
+                                <a href="https://twitter.com/thevivek143" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-orange-500/30 transition-all">
+                                    <i data-lucide="twitter" class="w-4 h-4 text-neutral-400"></i>
+                                </a>
+                                <a href="https://huggingface.co/thevivek012" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-orange-500/30 transition-all">
+                                    <span class="hf-icon">🤗</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 anim-in delay-6"><span class="text-[10px] text-neutral-500 uppercase tracking-widest">Scroll</span><div class="w-5 h-8 rounded-full border border-white/15 flex justify-center pt-1.5"><div class="w-1 h-2 rounded-full bg-orange-400 animate-bounce"></div></div></div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 anim-in delay-6">
+            <span class="text-[10px] text-neutral-500 uppercase tracking-widest">Scroll</span>
+            <div class="w-5 h-8 rounded-full border border-white/15 flex justify-center pt-1.5">
+                <div class="w-1 h-2 rounded-full bg-orange-400 animate-bounce"></div>
+            </div>
+        </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ==================== ABOUT ==================== -->
     <section id="about" class="relative py-32">
         <div class="max-w-7xl mx-auto px-6">
             <div class="section-reveal grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6"><span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">About Me</span></div>
-                    <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-6 leading-tight">The story behind<br><span class="gradient-text font-500">the code</span></h2>
-                    <p class="text-neutral-400 leading-relaxed mb-5">I'm <span class="text-white font-medium">Siripuram Vivek Vardhan</span>, a developer from India driven by curiosity. My journey started with "Hello World" and evolved into working across web development, medical AI, and multi-agent systems.</p>
-                    <p class="text-neutral-400 leading-relaxed mb-5">I specialize in full-stack development, medical AI (brain MRI classification, knee osteoarthritis grading), AI agent architectures, and building tools like <a href="https://vibox.app" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">vibox.app</a>. I'm also active on <a href="https://huggingface.co/thevivek012" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">Hugging Face</a>, deploying AI models as interactive Spaces.</p>
-                    <p class="text-neutral-400 leading-relaxed mb-8">When I'm not coding, you'll find me exploring AI papers, contributing to open source on <a href="https://github.com/thevivek143" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">GitHub</a>, or shipping new projects.</p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
+                        <span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">About Me</span>
+                    </div>
+                    <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-6 leading-tight">
+                        The story behind<br><span class="gradient-text font-500">the code</span>
+                    </h2>
+                    <p class="text-neutral-400 leading-relaxed mb-5">
+                        I'm <span class="text-white font-medium">Siripuram Vivek Vardhan</span>, a developer from India driven by curiosity. My journey started with "Hello World" and evolved into working across web development, medical AI, and multi-agent systems.
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed mb-5">
+                        I specialize in full-stack development, medical AI (brain MRI classification, knee osteoarthritis grading), AI agent architectures, and building tools like <a href="https://vibox.app" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">vibox.app</a>. I'm also active on <a href="https://huggingface.co/thevivek012" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">Hugging Face</a>, deploying AI models as interactive Spaces.
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed mb-8">
+                        When I'm not coding, you'll find me exploring AI papers, contributing to open source on <a href="https://github.com/thevivek143" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">GitHub</a>, or shipping new projects.
+                    </p>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="glass-card rounded-2xl p-5"><i data-lucide="brain" class="w-5 h-5 text-orange-400 mb-3"></i><div class="text-sm font-medium mb-1">Medical AI</div><div class="text-xs text-neutral-500">Brain MRI & Knee OA</div></div>
-                        <div class="glass-card rounded-2xl p-5"><i data-lucide="git-branch" class="w-5 h-5 text-orange-400 mb-3"></i><div class="text-sm font-medium mb-1">Open Source</div><div class="text-xs text-neutral-500">15+ repositories</div></div>
-                        <div class="glass-card rounded-2xl p-5"><i data-lucide="bot" class="w-5 h-5 text-orange-400 mb-3"></i><div class="text-sm font-medium mb-1">AI Agents</div><div class="text-xs text-neutral-500">Multi-agent systems</div></div>
-                        <div class="glass-card rounded-2xl p-5"><i data-lucide="wrench" class="w-5 h-5 text-orange-400 mb-3"></i><div class="text-sm font-medium mb-1">Dev Tools</div><div class="text-xs text-neutral-500">vibox.app & more</div></div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <i data-lucide="brain" class="w-5 h-5 text-orange-400 mb-3"></i>
+                            <div class="text-sm font-medium mb-1">Medical AI</div>
+                            <div class="text-xs text-neutral-500">Brain MRI & Knee OA</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <i data-lucide="git-branch" class="w-5 h-5 text-orange-400 mb-3"></i>
+                            <div class="text-sm font-medium mb-1">Open Source</div>
+                            <div class="text-xs text-neutral-500">15+ repositories</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <i data-lucide="bot" class="w-5 h-5 text-orange-400 mb-3"></i>
+                            <div class="text-sm font-medium mb-1">AI Agents</div>
+                            <div class="text-xs text-neutral-500">Multi-agent systems</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <i data-lucide="wrench" class="w-5 h-5 text-orange-400 mb-3"></i>
+                            <div class="text-sm font-medium mb-1">Dev Tools</div>
+                            <div class="text-xs text-neutral-500">vibox.app & more</div>
+                        </div>
                     </div>
                 </div>
                 <div class="relative">
                     <div class="glow-orb w-[300px] h-[300px] bg-orange-500/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                     <div class="relative glass-card rounded-3xl p-8 overflow-hidden">
-                        <div class="flex items-center gap-3 mb-6"><div class="w-3 h-3 rounded-full bg-red-500/60"></div><div class="w-3 h-3 rounded-full bg-yellow-500/60"></div><div class="w-3 h-3 rounded-full bg-green-500/60"></div><span class="text-[10px] text-neutral-500 ml-2 font-mono">vivekvardhan.ts</span></div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+                            <span class="text-[10px] text-neutral-500 ml-2 font-mono">vivekvardhan.ts</span>
+                        </div>
                         <pre class="text-sm font-mono leading-relaxed overflow-x-auto"><code><span class="text-orange-400">const</span> <span class="text-blue-400">vivek</span> = {
   <span class="text-green-400">fullName</span>: <span class="text-yellow-300">"Siripuram Vivek Vardhan"</span>,
   <span class="text-green-400">username</span>: <span class="text-yellow-300">"thevivek143"</span>,
@@ -177,43 +390,171 @@
         </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- ==================== SKILLS ==================== -->
     <section id="skills" class="relative py-32">
         <div class="max-w-7xl mx-auto px-6">
             <div class="section-reveal text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6"><span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">Tech Stack</span></div>
-                <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">Tools & <span class="gradient-text font-500">Technologies</span></h2>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
+                    <span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">Tech Stack</span>
+                </div>
+                <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">
+                    Tools & <span class="gradient-text font-500">Technologies</span>
+                </h2>
             </div>
+
             <div class="section-reveal flex flex-wrap justify-center gap-3 mb-12">
                 <button class="tab-btn active px-5 py-2.5 rounded-full text-sm border border-white/10 bg-white/5 transition-all" data-tab="frontend">Frontend</button>
                 <button class="tab-btn px-5 py-2.5 rounded-full text-sm border border-white/10 bg-white/5 text-neutral-400 transition-all" data-tab="backend">Backend & AI</button>
                 <button class="tab-btn px-5 py-2.5 rounded-full text-sm border border-white/10 bg-white/5 text-neutral-400 transition-all" data-tab="tools">Tools</button>
             </div>
+
             <div id="tab-frontend" class="tab-content section-reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="layout" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">React</div><div class="text-[11px] text-neutral-500">Components & Hooks</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="file-code-2" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">TypeScript</div><div class="text-[11px] text-neutral-500">Type-safe code</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="wind" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Tailwind CSS</div><div class="text-[11px] text-neutral-500">Utility-first</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="globe" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">HTML / CSS</div><div class="text-[11px] text-neutral-500">Semantic & Responsive</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="box" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Next.js</div><div class="text-[11px] text-neutral-500">SSR / SSG</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="sparkles" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">GSAP</div><div class="text-[11px] text-neutral-500">Animations</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="smartphone" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Bootstrap</div><div class="text-[11px] text-neutral-500">UI Framework</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="database" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Redux</div><div class="text-[11px] text-neutral-500">State Management</div></div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="layout" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">React</div>
+                    <div class="text-[11px] text-neutral-500">Components & Hooks</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="file-code-2" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">TypeScript</div>
+                    <div class="text-[11px] text-neutral-500">Type-safe code</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="wind" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Tailwind CSS</div>
+                    <div class="text-[11px] text-neutral-500">Utility-first</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="globe" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">HTML / CSS</div>
+                    <div class="text-[11px] text-neutral-500">Semantic & Responsive</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="box" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Next.js</div>
+                    <div class="text-[11px] text-neutral-500">SSR / SSG</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">GSAP</div>
+                    <div class="text-[11px] text-neutral-500">Animations</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="smartphone" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Bootstrap</div>
+                    <div class="text-[11px] text-neutral-500">UI Framework</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="database" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Redux</div>
+                    <div class="text-[11px] text-neutral-500">State Management</div>
+                </div>
             </div>
+
             <div id="tab-backend" class="tab-content hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="server" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Node.js</div><div class="text-[11px] text-neutral-500">Express / REST</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="terminal" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Python</div><div class="text-[11px] text-neutral-500">Django / FastAPI</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="brain" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">PyTorch</div><div class="text-[11px] text-neutral-500">Deep Learning</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="scan" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Medical AI</div><div class="text-[11px] text-neutral-500">MRI / X-Ray</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="bot" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">AI Agents</div><div class="text-[11px] text-neutral-500">Multi-Agent Systems</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="database" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">MongoDB</div><div class="text-[11px] text-neutral-500">NoSQL</div></div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="server" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Node.js</div>
+                    <div class="text-[11px] text-neutral-500">Express / REST</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="terminal" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Python</div>
+                    <div class="text-[11px] text-neutral-500">Django / FastAPI</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="brain" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">PyTorch</div>
+                    <div class="text-[11px] text-neutral-500">Deep Learning</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="scan" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Medical AI</div>
+                    <div class="text-[11px] text-neutral-500">MRI / X-Ray</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="bot" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">AI Agents</div>
+                    <div class="text-[11px] text-neutral-500">Multi-Agent Systems</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="database" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">MongoDB</div>
+                    <div class="text-[11px] text-neutral-500">NoSQL</div>
+                </div>
             </div>
+
             <div id="tab-tools" class="tab-content hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="git-branch" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Git / GitHub</div><div class="text-[11px] text-neutral-500">Version Control</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="cloud" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Hugging Face</div><div class="text-[11px] text-neutral-500">Spaces & Models</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="figma" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">VS Code</div><div class="text-[11px] text-neutral-500">IDE</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="linux" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Linux</div><div class="text-[11px] text-neutral-500">Command Line</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="container" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Docker</div><div class="text-[11px] text-neutral-500">Containers</div></div>
-                <div class="glass-card rounded-2xl p-6 text-center group cursor-default"><div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors"><i data-lucide="workflow" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i></div><div class="text-sm font-medium mb-1">Postman</div><div class="text-[11px] text-neutral-500">API Testing</div></div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="git-branch" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Git / GitHub</div>
+                    <div class="text-[11px] text-neutral-500">Version Control</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="cloud" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Hugging Face</div>
+                    <div class="text-[11px] text-neutral-500">Spaces & Models</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="figma" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">VS Code</div>
+                    <div class="text-[11px] text-neutral-500">IDE</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="linux" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Linux</div>
+                    <div class="text-[11px] text-neutral-500">Command Line</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="container" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Docker</div>
+                    <div class="text-[11px] text-neutral-500">Containers</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center group cursor-default">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500/10 transition-colors">
+                        <i data-lucide="workflow" class="w-6 h-6 text-neutral-400 group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <div class="text-sm font-medium mb-1">Postman</div>
+                    <div class="text-[11px] text-neutral-500">API Testing</div>
+                </div>
             </div>
         </div>
     </section>
@@ -222,14 +563,18 @@
     <section id="projects" class="relative py-32">
         <div class="max-w-7xl mx-auto px-6">
             <div class="section-reveal text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6"><span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">Portfolio</span></div>
-                <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">My <span class="gradient-text font-500">Projects</span></h2>
-                <p class="text-neutral-400 max-w-lg mx-auto">Real projects from <a href="https://github.com/thevivek143" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">GitHub (@thevivek143)</a> — with live demos and Hugging Face Spaces.</p>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
+                    <span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">Portfolio</span>
+                </div>
+                <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">
+                    My <span class="gradient-text font-500">Projects</span>
+                </h2>
+                <p class="text-neutral-400 max-w-lg mx-auto">
+                    Real projects from <a href="https://github.com/thevivek143" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">GitHub (@thevivek143)</a> — with live demos and Hugging Face Spaces.
+                </p>
             </div>
 
             <div class="section-reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- 1) SSCLNetAI — fixed image -->
                 <div class="glass-card rounded-3xl overflow-hidden group project-card">
                     <div class="relative h-56 overflow-hidden">
                         <img src="https://picsum.photos/seed/ssclnet-medical-brain/800/500" alt="SSCLNetAI - Medical AI Brain MRI" class="w-full h-full object-cover project-img">
@@ -238,76 +583,105 @@
                             <span class="px-2.5 py-1 rounded-full bg-green-500/20 border border-green-500/30 text-[10px] text-green-400 uppercase tracking-wider">Healthcare</span>
                             <span class="px-2.5 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-[10px] text-blue-400 uppercase tracking-wider">Deep Learning</span>
                         </div>
-                        <div class="absolute bottom-4 right-4 z-10"><span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">Python</span></div>
+                        <div class="absolute bottom-4 right-4 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">Python</span>
+                        </div>
                     </div>
                     <div class="p-7">
                         <h3 class="font-bricolage text-xl font-500 mb-2">SSCLNetAI</h3>
                         <p class="text-sm text-neutral-400 mb-4 leading-relaxed">Medical AI for brain MRI tumor classification (ResNet-18 SimCLR: Glioma, Meningioma, Pituitary, No Tumor) and knee osteoarthritis grading (DenseNet-121 with dual-attention). Includes Grad-CAM heatmaps, ROI cropping, Gradio dashboard, and PDF reports.</p>
-                        <div class="flex flex-wrap gap-1.5 mb-5"><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Python</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">PyTorch</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Gradio</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">SimCLR</span></div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Python</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">PyTorch</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Gradio</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">SimCLR</span>
+                        </div>
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
                             <a href="https://github.com/thevivek143/SSCLNet_Project" target="_blank" class="text-sm text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> Source</a>
                             <a href="https://thevivek143.github.io/SSCLNetAI/" target="_blank" class="text-sm text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1.5"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live</a>
-                            <a href="https://huggingface.co/spaces/thevivek012/SSCLNet-Medical-AI" target="_blank" class="text-sm text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> HF</a>
+                            <a href="https://huggingface.co/spaces/thevivek012/SSCLNet-Medical-AI" target="_blank" class="text-sm text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1.5"><span class="hf-icon text-xs">🤗</span> HF</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2) AICorp -->
                 <div class="glass-card rounded-3xl overflow-hidden group project-card">
                     <div class="relative h-56 overflow-hidden">
                         <img src="https://picsum.photos/seed/aicorp-multi-agent-ai/800/500" alt="AICorp Multi-Agent AI" class="w-full h-full object-cover project-img">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent"></div>
-                        <div class="absolute top-4 left-4 flex gap-2 z-10"><span class="px-2.5 py-1 rounded-full bg-purple-500/20 border border-purple-500/30 text-[10px] text-purple-400 uppercase tracking-wider">AI Agents</span></div>
-                        <div class="absolute bottom-4 right-4 z-10"><span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">TypeScript</span></div>
+                        <div class="absolute top-4 left-4 flex gap-2 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-purple-500/20 border border-purple-500/30 text-[10px] text-purple-400 uppercase tracking-wider">AI Agents</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">TypeScript</span>
+                        </div>
                     </div>
                     <div class="p-7">
                         <h3 class="font-bricolage text-xl font-500 mb-2">AICorp — Autonomous Multi-Agent AI</h3>
                         <p class="text-sm text-neutral-400 mb-4 leading-relaxed">Multi-agent AI system functioning as a complete software company. Describe what you want in plain English, and 8 specialized AI agents collaborate to design, develop, test, and deploy your application. Features browser environment support and review workflow.</p>
-                        <div class="flex flex-wrap gap-1.5 mb-5"><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">TypeScript</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">AI Agents</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Automation</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Node.js</span></div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">TypeScript</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">AI Agents</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Automation</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Node.js</span>
+                        </div>
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
                             <a href="https://github.com/thevivek143/AICorp---Autonomous-Multi-Agent-AI-Software-Development-" target="_blank" class="text-sm text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> Source</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3) Clothes Virtual Try-On -->
                 <div class="glass-card rounded-3xl overflow-hidden group project-card">
                     <div class="relative h-56 overflow-hidden">
                         <img src="https://picsum.photos/seed/virtual-tryon-fashion/800/500" alt="Clothes Virtual Try-On" class="w-full h-full object-cover project-img">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent"></div>
-                        <div class="absolute top-4 left-4 flex gap-2 z-10"><span class="px-2.5 py-1 rounded-full bg-pink-500/20 border border-pink-500/30 text-[10px] text-pink-400 uppercase tracking-wider">Computer Vision</span></div>
-                        <div class="absolute bottom-4 right-4 z-10"><span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">Jupyter</span></div>
+                        <div class="absolute top-4 left-4 flex gap-2 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-pink-500/20 border border-pink-500/30 text-[10px] text-pink-400 uppercase tracking-wider">Computer Vision</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">Jupyter</span>
+                        </div>
                     </div>
                     <div class="p-7">
                         <h3 class="font-bricolage text-xl font-500 mb-2">Clothes Virtual Try-On</h3>
                         <p class="text-sm text-neutral-400 mb-4 leading-relaxed">Virtual try-on pipeline using image processing and deep learning. Explores warping, inpainting, and generation to realistically overlay clothing on person images. Deployed as a Hugging Face Space with Kolors model.</p>
-                        <div class="flex flex-wrap gap-1.5 mb-5"><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Python</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Jupyter</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">OpenCV</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Diffusion</span></div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Python</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Jupyter</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">OpenCV</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Diffusion</span>
+                        </div>
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
                             <a href="https://github.com/thevivek143/clothes-virtual-try-on" target="_blank" class="text-sm text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> Source</a>
-                            <a href="https://huggingface.co/spaces/thevivek012/Kolors-Virtual-Try-On" target="_blank" class="text-sm text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> HF</a>
+                            <a href="https://huggingface.co/spaces/thevivek012/Kolors-Virtual-Try-On" target="_blank" class="text-sm text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1.5"><span class="hf-icon text-xs">🤗</span> HF</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4) CouponHive -->
                 <div class="glass-card rounded-3xl overflow-hidden group project-card">
                     <div class="relative h-56 overflow-hidden">
                         <img src="https://picsum.photos/seed/couponhive-deals-shop/800/500" alt="CouponHive" class="w-full h-full object-cover project-img">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent"></div>
-                        <div class="absolute top-4 left-4 flex gap-2 z-10"><span class="px-2.5 py-1 rounded-full bg-orange-500/20 border border-orange-500/30 text-[10px] text-orange-400 uppercase tracking-wider">Web App</span></div>
-                        <div class="absolute bottom-4 right-4 z-10"><span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">TypeScript</span></div>
+                        <div class="absolute top-4 left-4 flex gap-2 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-orange-500/20 border border-orange-500/30 text-[10px] text-orange-400 uppercase tracking-wider">Web App</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">TypeScript</span>
+                        </div>
                     </div>
                     <div class="p-7">
                         <h3 class="font-bricolage text-xl font-500 mb-2">CouponHive</h3>
                         <p class="text-sm text-neutral-400 mb-4 leading-relaxed">Platform for discovering, managing, and sharing coupons and deals. Type-safe codebase with clean UI, focused on performance and great user experience.</p>
-                        <div class="flex flex-wrap gap-1.5 mb-5"><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">TypeScript</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">React</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Node.js</span></div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">TypeScript</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">React</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Node.js</span>
+                        </div>
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
                             <a href="https://github.com/thevivek143/couponhive" target="_blank" class="text-sm text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> Source</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5) Vibox.app (vtoolz) -->
                 <div class="glass-card rounded-3xl overflow-hidden group project-card">
                     <div class="relative h-56 overflow-hidden">
                         <img src="https://picsum.photos/seed/vibox-app-tools-dev/800/500" alt="vibox.app" class="w-full h-full object-cover project-img">
@@ -316,12 +690,19 @@
                             <span class="px-2.5 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/30 text-[10px] text-cyan-400 uppercase tracking-wider">Dev Tool</span>
                             <span class="px-2.5 py-1 rounded-full bg-orange-500/20 border border-orange-500/30 text-[10px] text-orange-400 uppercase tracking-wider">Live</span>
                         </div>
-                        <div class="absolute bottom-4 right-4 z-10"><span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">JavaScript</span></div>
+                        <div class="absolute bottom-4 right-4 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">JavaScript</span>
+                        </div>
                     </div>
                     <div class="p-7">
                         <h3 class="font-bricolage text-xl font-500 mb-2">vibox.app <span class="text-xs text-neutral-500 font-normal">(vtoolz)</span></h3>
                         <p class="text-sm text-neutral-400 mb-4 leading-relaxed">A developer toolkit web application live at vibox.app. Built to provide useful utilities and tools for developers — all accessible from a single, clean interface.</p>
-                        <div class="flex flex-wrap gap-1.5 mb-5"><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">JavaScript</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">CSS</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">HTML</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Web Tools</span></div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">JavaScript</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">CSS</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">HTML</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Web Tools</span>
+                        </div>
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
                             <a href="https://vibox.app" target="_blank" class="text-sm text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1.5"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> vibox.app</a>
                             <a href="https://github.com/thevivek143/vtoolz" target="_blank" class="text-sm text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> Source</a>
@@ -329,28 +710,34 @@
                     </div>
                 </div>
 
-                <!-- 6) Vivek Vardhan Portfolio -->
                 <div class="glass-card rounded-3xl overflow-hidden group project-card">
                     <div class="relative h-56 overflow-hidden">
                         <img src="https://picsum.photos/seed/vivek-portfolio-web-design/800/500" alt="Vivek Vardhan Portfolio" class="w-full h-full object-cover project-img">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent"></div>
-                        <div class="absolute top-4 left-4 flex gap-2 z-10"><span class="px-2.5 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-[10px] text-blue-400 uppercase tracking-wider">Personal</span></div>
-                        <div class="absolute bottom-4 right-4 z-10"><span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">HTML/CSS/JS</span></div>
+                        <div class="absolute top-4 left-4 flex gap-2 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-[10px] text-blue-400 uppercase tracking-wider">Personal</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 z-10">
+                            <span class="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] text-white/80 uppercase tracking-wider backdrop-blur-sm">HTML/CSS/JS</span>
+                        </div>
                     </div>
                     <div class="p-7">
                         <h3 class="font-bricolage text-xl font-500 mb-2">Vivek Vardhan Portfolio</h3>
                         <p class="text-sm text-neutral-400 mb-4 leading-relaxed">My personal portfolio — vivekvardhan.in — showcasing projects, skills, and contact info. Designed to present my work and make it easy for collaborators and recruiters to connect.</p>
-                        <div class="flex flex-wrap gap-1.5 mb-5"><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">HTML</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">CSS</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">JavaScript</span><span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Three.js</span></div>
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">HTML</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">CSS</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">JavaScript</span>
+                            <span class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-neutral-400">Three.js</span>
+                        </div>
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
                             <a href="https://github.com/thevivek143/vivek-vardhan-porfolio" target="_blank" class="text-sm text-orange-400 hover:text-orange-300 transition-colors inline-flex items-center gap-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> Source</a>
                             <a href="https://vivekvardhan.in" target="_blank" class="text-sm text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1.5"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live</a>
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- More repos -->
             <div class="section-reveal mt-10">
                 <div class="glass-card rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
                     <div class="flex items-center gap-5">
@@ -366,15 +753,20 @@
         </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- ==================== EXPERIENCE / JOURNEY ==================== -->
     <section id="experience" class="relative py-32">
         <div class="max-w-7xl mx-auto px-6">
             <div class="section-reveal text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6"><span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">Journey</span></div>
-                <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">My <span class="gradient-text font-500">Journey</span></h2>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
+                    <span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">Journey</span>
+                </div>
+                <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">
+                    My <span class="gradient-text font-500">Journey</span>
+                </h2>
             </div>
             <div class="section-reveal max-w-3xl mx-auto relative">
                 <div class="absolute left-[19px] top-0 bottom-0 w-px timeline-line hidden sm:block"></div>
+
                 <div class="relative pl-0 sm:pl-14 pb-12 group">
                     <div class="hidden sm:flex absolute left-0 top-1 w-10 h-10 rounded-full bg-[#0A0A0A] border border-orange-500/30 items-center justify-center group-hover:border-orange-500/60 transition-colors z-10"><i data-lucide="rocket" class="w-4 h-4 text-orange-400"></i></div>
                     <div class="glass-card rounded-2xl p-6 sm:p-8">
@@ -383,6 +775,7 @@
                         <p class="text-sm text-neutral-400 leading-relaxed">Developing medical AI (SSCLNetAI), multi-agent architectures (AICorp), computer vision (virtual try-on), dev tools (<a href="https://vibox.app" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">vibox.app</a>), and deploying on Hugging Face. Maintaining 15+ repos on GitHub.</p>
                     </div>
                 </div>
+
                 <div class="relative pl-0 sm:pl-14 pb-12 group">
                     <div class="hidden sm:flex absolute left-0 top-1 w-10 h-10 rounded-full bg-[#0A0A0A] border border-white/10 items-center justify-center group-hover:border-orange-500/40 transition-colors z-10"><i data-lucide="code-2" class="w-4 h-4 text-neutral-500 group-hover:text-orange-400 transition-colors"></i></div>
                     <div class="glass-card rounded-2xl p-6 sm:p-8">
@@ -391,6 +784,7 @@
                         <p class="text-sm text-neutral-400 leading-relaxed">Full-stack with React, Node.js, TypeScript. Built CouponHive, vchat-prototype (blockchain super-app), terminal-portfolio, and multiple portfolio iterations.</p>
                     </div>
                 </div>
+
                 <div class="relative pl-0 sm:pl-14 pb-12 group">
                     <div class="hidden sm:flex absolute left-0 top-1 w-10 h-10 rounded-full bg-[#0A0A0A] border border-white/10 items-center justify-center group-hover:border-orange-500/40 transition-colors z-10"><i data-lucide="graduation-cap" class="w-4 h-4 text-neutral-500 group-hover:text-orange-400 transition-colors"></i></div>
                     <div class="glass-card rounded-2xl p-6 sm:p-8">
@@ -399,6 +793,7 @@
                         <p class="text-sm text-neutral-400 leading-relaxed">Strong foundation in programming, DSA, databases, and software engineering. Started with web projects (MineCraft, VirtualMouse, Calculator, Music Player, Paint, Typing Speed Game) and grew into full-stack and AI.</p>
                     </div>
                 </div>
+
                 <div class="relative pl-0 sm:pl-14 group">
                     <div class="hidden sm:flex absolute left-0 top-1 w-10 h-10 rounded-full bg-[#0A0A0A] border border-white/10 items-center justify-center group-hover:border-orange-500/40 transition-colors z-10"><i data-lucide="lightbulb" class="w-4 h-4 text-neutral-500 group-hover:text-orange-400 transition-colors"></i></div>
                     <div class="glass-card rounded-2xl p-6 sm:p-8">
@@ -410,19 +805,53 @@
         </div>
     </section>
 
-    <!-- GITHUB STATS -->
+    <!-- ==================== GITHUB STATS ==================== -->
     <section class="relative py-32">
         <div class="max-w-7xl mx-auto px-6">
             <div class="section-reveal text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6"><span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">GitHub</span></div>
-                <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">@thevivek143 <span class="gradient-text font-500">Activity</span></h2>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
+                    <span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">GitHub</span>
+                </div>
+                <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">
+                    @thevivek143 <span class="gradient-text font-500">Activity</span>
+                </h2>
             </div>
+
             <div class="section-reveal grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden"><div class="glow-orb w-[120px] h-[120px] bg-orange-500/10 top-[-40px] right-[-40px]"></div><div class="relative"><i data-lucide="folder-git-2" class="w-7 h-7 text-orange-400 mx-auto mb-4"></i><div class="text-4xl font-bricolage font-500 gradient-text mb-2" id="ghRepos">0</div><div class="text-sm text-neutral-400">Repositories</div></div></div>
-                <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden"><div class="glow-orb w-[120px] h-[120px] bg-orange-500/10 top-[-40px] right-[-40px]"></div><div class="relative"><i data-lucide="star" class="w-7 h-7 text-orange-400 mx-auto mb-4"></i><div class="text-4xl font-bricolage font-500 gradient-text mb-2" id="ghStars">0</div><div class="text-sm text-neutral-400">Stars Earned</div></div></div>
-                <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden"><div class="glow-orb w-[120px] h-[120px] bg-orange-500/10 top-[-40px] right-[-40px]"></div><div class="relative"><i data-lucide="languages" class="w-7 h-7 text-orange-400 mx-auto mb-4"></i><div class="text-4xl font-bricolage font-500 gradient-text mb-2" id="ghLangs">0</div><div class="text-sm text-neutral-400">Languages</div></div></div>
-                <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden"><div class="glow-orb w-[120px] h-[120px] bg-orange-500/10 top-[-40px] right-[-40px]"></div><div class="relative"><i data-lucide="boxes" class="w-7 h-7 text-orange-400 mx-auto mb-4"></i><div class="text-4xl font-bricolage font-500 gradient-text mb-2" id="ghHF">3</div><div class="text-sm text-neutral-400">HF Spaces</div></div></div>
+                <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden">
+                    <div class="glow-orb w-[120px] h-[120px] bg-orange-500/10 top-[-40px] right-[-40px]"></div>
+                    <div class="relative">
+                        <i data-lucide="folder-git-2" class="w-7 h-7 text-orange-400 mx-auto mb-4"></i>
+                        <div class="text-4xl font-bricolage font-500 gradient-text mb-2" id="ghRepos">—</div>
+                        <div class="text-sm text-neutral-400">Repositories</div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden">
+                    <div class="glow-orb w-[120px] h-[120px] bg-orange-500/10 top-[-40px] right-[-40px]"></div>
+                    <div class="relative">
+                        <i data-lucide="star" class="w-7 h-7 text-orange-400 mx-auto mb-4"></i>
+                        <div class="text-4xl font-bricolage font-500 gradient-text mb-2" id="ghStars">—</div>
+                        <div class="text-sm text-neutral-400">Stars Earned</div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden">
+                    <div class="glow-orb w-[120px] h-[120px] bg-orange-500/10 top-[-40px] right-[-40px]"></div>
+                    <div class="relative">
+                        <i data-lucide="languages" class="w-7 h-7 text-orange-400 mx-auto mb-4"></i>
+                        <div class="text-4xl font-bricolage font-500 gradient-text mb-2" id="ghLangs">—</div>
+                        <div class="text-sm text-neutral-400">Languages</div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden">
+                    <div class="glow-orb w-[120px] h-[120px] bg-orange-500/10 top-[-40px] right-[-40px]"></div>
+                    <div class="relative">
+                        <span class="hf-icon text-3xl mx-auto mb-4 block">🤗</span>
+                        <div class="text-4xl font-bricolage font-500 gradient-text mb-2">3</div>
+                        <div class="text-sm text-neutral-400">HF Spaces</div>
+                    </div>
+                </div>
             </div>
+
             <div class="section-reveal max-w-2xl mx-auto">
                 <div class="glass-card rounded-3xl p-8 flex flex-col sm:flex-row items-center gap-6">
                     <img src="https://avatars.githubusercontent.com/u/66245161?v=4" alt="GitHub Avatar" class="w-20 h-20 rounded-2xl object-cover border border-white/10">
@@ -432,7 +861,7 @@
                         <p class="text-xs text-neutral-500 mb-4">Full-Stack Developer | Medical AI | Multi-Agent Systems | <a href="https://vibox.app" target="_blank" class="text-orange-400 hover:text-orange-300 transition-colors">vibox.app</a> 🚀</p>
                         <div class="flex flex-wrap gap-3">
                             <a href="https://github.com/thevivek143" target="_blank" class="sec-btn px-4 py-2 rounded-full text-xs inline-flex items-center gap-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub</a>
-                            <a href="https://huggingface.co/thevivek012" target="_blank" class="sec-btn px-4 py-2 rounded-full text-xs inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Hugging Face</a>
+                            <a href="https://huggingface.co/thevivek012" target="_blank" class="sec-btn px-4 py-2 rounded-full text-xs inline-flex items-center gap-1.5"><span class="hf-icon text-xs">🤗</span> Hugging Face</a>
                             <a href="https://vibox.app" target="_blank" class="sec-btn px-4 py-2 rounded-full text-xs inline-flex items-center gap-1.5"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> vibox.app</a>
                         </div>
                     </div>
@@ -441,31 +870,84 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ==================== CONTACT ==================== -->
     <section id="contact" class="relative py-32">
         <div class="max-w-7xl mx-auto px-6">
             <div class="section-reveal max-w-4xl mx-auto">
                 <div class="text-center mb-16">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6"><span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">Get in Touch</span></div>
-                    <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">Let's build something<br><span class="gradient-text font-500">amazing together</span></h2>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
+                        <span class="text-[10px] text-orange-400 uppercase tracking-widest font-medium">Get in Touch</span>
+                    </div>
+                    <h2 class="font-bricolage text-4xl sm:text-5xl font-300 tracking-tight mb-4">
+                        Let's build something<br><span class="gradient-text font-500">amazing together</span>
+                    </h2>
                 </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-2 space-y-4">
-                        <a href="mailto:siripuramvivekvardhan@gmail.com" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block"><div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><i data-lucide="mail" class="w-5 h-5 text-orange-400"></i></div><div class="min-w-0"><div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">Email</div><div class="text-sm text-neutral-300 group-hover:text-white transition-colors truncate">siripuramvivekvardhan@gmail.com</div></div></a>
-                        <a href="https://vibox.app" target="_blank" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block"><div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><i data-lucide="wrench" class="w-5 h-5 text-orange-400"></i></div><div><div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">Dev Tool</div><div class="text-sm text-neutral-300 group-hover:text-white transition-colors">vibox.app</div></div></a>
-                        <a href="https://github.com/thevivek143" target="_blank" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block"><div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><i data-lucide="github" class="w-5 h-5 text-orange-400"></i></div><div><div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">GitHub</div><div class="text-sm text-neutral-300 group-hover:text-white transition-colors">github.com/thevivek143</div></div></a>
-                        <a href="https://huggingface.co/thevivek012" target="_blank" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block"><div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><svg class="w-5 h-5 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div><div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">Hugging Face</div><div class="text-sm text-neutral-300 group-hover:text-white transition-colors">thevivek012</div></div></a>
-                        <a href="https://linkedin.com/in/siripuramvivekvardhan" target="_blank" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block"><div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><i data-lucide="linkedin" class="w-5 h-5 text-orange-400"></i></div><div><div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">LinkedIn</div><div class="text-sm text-neutral-300 group-hover:text-white transition-colors">Siripuram Vivek Vardhan</div></div></a>
-                    </div>
-                    <div class="lg:col-span-3">
-                        <form id="contactForm" class="glass-card rounded-3xl p-8">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                                <div><label class="text-[11px] text-neutral-500 uppercase tracking-wider mb-2 block">Name</label><input type="text" name="name" required placeholder="Your name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/40 focus:bg-white/[0.07] transition-all"></div>
-                                <div><label class="text-[11px] text-neutral-500 uppercase tracking-wider mb-2 block">Email</label><input type="email" name="email" required placeholder="you@email.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/40 focus:bg-white/[0.07] transition-all"></div>
+                        <a href="mailto:siripuramvivekvardhan@gmail.com" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block">
+                            <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><i data-lucide="mail" class="w-5 h-5 text-orange-400"></i></div>
+                            <div class="min-w-0">
+                                <div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">Email</div>
+                                <div class="text-sm text-neutral-300 group-hover:text-white transition-colors truncate">siripuramvivekvardhan@gmail.com</div>
                             </div>
-                            <div class="mb-4"><label class="text-[11px] text-neutral-500 uppercase tracking-wider mb-2 block">Subject</label><input type="text" name="subject" placeholder="What's this about?" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/40 focus:bg-white/[0.07] transition-all"></div>
-                            <div class="mb-6"><label class="text-[11px] text-neutral-500 uppercase tracking-wider mb-2 block">Message</label><textarea name="message" required rows="5" placeholder="Tell me about your idea..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/40 focus:bg-white/[0.07] transition-all resize-none"></textarea></div>
-                            <button type="submit" class="cta-btn w-full px-8 py-4 rounded-xl text-base font-semibold inline-flex items-center justify-center gap-2"><i data-lucide="send" class="w-4 h-4"></i> Send Message</button>
+                        </a>
+                        <a href="https://vibox.app" target="_blank" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block">
+                            <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><i data-lucide="wrench" class="w-5 h-5 text-orange-400"></i></div>
+                            <div>
+                                <div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">Dev Tool</div>
+                                <div class="text-sm text-neutral-300 group-hover:text-white transition-colors">vibox.app</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/thevivek143" target="_blank" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block">
+                            <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><i data-lucide="github" class="w-5 h-5 text-orange-400"></i></div>
+                            <div>
+                                <div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">GitHub</div>
+                                <div class="text-sm text-neutral-300 group-hover:text-white transition-colors">github.com/thevivek143</div>
+                            </div>
+                        </a>
+                        <a href="https://huggingface.co/thevivek012" target="_blank" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block">
+                            <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><span class="hf-icon">🤗</span></div>
+                            <div>
+                                <div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">Hugging Face</div>
+                                <div class="text-sm text-neutral-300 group-hover:text-white transition-colors">thevivek012</div>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/siripuramvivekvardhan" target="_blank" class="glass-card rounded-2xl p-5 flex items-center gap-4 group block">
+                            <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 transition-colors"><i data-lucide="linkedin" class="w-5 h-5 text-orange-400"></i></div>
+                            <div>
+                                <div class="text-[11px] text-neutral-500 uppercase tracking-wider mb-0.5">LinkedIn</div>
+                                <div class="text-sm text-neutral-300 group-hover:text-white transition-colors">Siripuram Vivek Vardhan</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-3">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="glass-card rounded-3xl p-8">
+                            <input type="hidden" name="access_key" value="b56d3de9-7411-4062-baa9-57be7ebbec33">
+                            <input type="hidden" name="subject" value="Portfolio Contact Form">
+                            <input type="hidden" name="from_name" value="Portfolio Website">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="text-[11px] text-neutral-500 uppercase tracking-wider mb-2 block">Name</label>
+                                    <input type="text" name="name" required placeholder="Your name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/40 focus:bg-white/[0.07] transition-all">
+                                </div>
+                                <div>
+                                    <label class="text-[11px] text-neutral-500 uppercase tracking-wider mb-2 block">Email</label>
+                                    <input type="email" name="email" required placeholder="you@email.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/40 focus:bg-white/[0.07] transition-all">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="text-[11px] text-neutral-500 uppercase tracking-wider mb-2 block">Subject</label>
+                                <input type="text" name="extra_subject" placeholder="What's this about?" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/40 focus:bg-white/[0.07] transition-all">
+                            </div>
+                            <div class="mb-6">
+                                <label class="text-[11px] text-neutral-500 uppercase tracking-wider mb-2 block">Message</label>
+                                <textarea name="message" required rows="5" placeholder="Tell me about your idea..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-orange-500/40 focus:bg-white/[0.07] transition-all resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="cta-btn w-full px-8 py-4 rounded-xl text-base font-semibold inline-flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-4 h-4"></i> Send Message
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -473,47 +955,316 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ==================== FOOTER ==================== -->
     <footer class="relative border-t border-white/5 py-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                 <div>
-                    <div class="flex items-center gap-3 mb-4"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-sm font-bold text-black font-bricolage">V</div><span class="font-bricolage text-lg font-500 tracking-tight">vivekvardhan<span class="text-orange-400">.in</span></span></div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-sm font-bold text-black font-bricolage">V</div>
+                        <span class="font-bricolage text-lg font-500 tracking-tight">vivekvardhan<span class="text-orange-400">.in</span></span>
+                    </div>
                     <p class="text-sm text-neutral-500 leading-relaxed max-w-xs">Siripuram Vivek Vardhan — building digital experiences and AI systems with passion from India.</p>
                 </div>
                 <div>
                     <h4 class="text-[11px] text-neutral-500 uppercase tracking-widest mb-4">Quick Links</h4>
-                    <div class="space-y-3"><a href="#about" class="block text-sm text-neutral-400 hover:text-white transition-colors">About</a><a href="#skills" class="block text-sm text-neutral-400 hover:text-white transition-colors">Skills</a><a href="#projects" class="block text-sm text-neutral-400 hover:text-white transition-colors">Projects</a><a href="#experience" class="block text-sm text-neutral-400 hover:text-white transition-colors">Journey</a><a href="#contact" class="block text-sm text-neutral-400 hover:text-white transition-colors">Contact</a></div>
+                    <div class="space-y-3">
+                        <a href="#about" class="block text-sm text-neutral-400 hover:text-white transition-colors">About</a>
+                        <a href="#skills" class="block text-sm text-neutral-400 hover:text-white transition-colors">Skills</a>
+                        <a href="#projects" class="block text-sm text-neutral-400 hover:text-white transition-colors">Projects</a>
+                        <a href="#experience" class="block text-sm text-neutral-400 hover:text-white transition-colors">Journey</a>
+                        <a href="#contact" class="block text-sm text-neutral-400 hover:text-white transition-colors">Contact</a>
+                    </div>
                 </div>
                 <div>
                     <h4 class="text-[11px] text-neutral-500 uppercase tracking-widest mb-4">Connect</h4>
-                    <div class="space-y-3"><a href="https://github.com/thevivek143" target="_blank" class="block text-sm text-neutral-400 hover:text-white transition-colors">GitHub (@thevivek143)</a><a href="https://vibox.app" target="_blank" class="block text-sm text-neutral-400 hover:text-white transition-colors">vibox.app</a><a href="https://huggingface.co/thevivek012" target="_blank" class="block text-sm text-neutral-400 hover:text-white transition-colors">Hugging Face</a><a href="https://linkedin.com/in/siripuramvivekvardhan" target="_blank" class="block text-sm text-neutral-400 hover:text-white transition-colors">LinkedIn</a><a href="mailto:siripuramvivekvardhan@gmail.com" class="block text-sm text-neutral-400 hover:text-white transition-colors">Email</a></div>
+                    <div class="space-y-3">
+                        <a href="https://github.com/thevivek143" target="_blank" class="block text-sm text-neutral-400 hover:text-white transition-colors">GitHub (@thevivek143)</a>
+                        <a href="https://vibox.app" target="_blank" class="block text-sm text-neutral-400 hover:text-white transition-colors">vibox.app</a>
+                        <a href="https://huggingface.co/thevivek012" target="_blank" class="block text-sm text-neutral-400 hover:text-white transition-colors">Hugging Face</a>
+                        <a href="https://linkedin.com/in/siripuramvivekvardhan" target="_blank" class="block text-sm text-neutral-400 hover:text-white transition-colors">LinkedIn</a>
+                        <a href="mailto:siripuramvivekvardhan@gmail.com" class="block text-sm text-neutral-400 hover:text-white transition-colors">Email</a>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-xs text-neutral-600">© 2024 Siripuram Vivek Vardhan. All rights reserved.</p>
-                <p class="text-xs text-neutral-600">Designed & built with <span class="text-orange-400">♥</span> in India</p>
+                <p class="text-xs text-neutral-600">&copy; 2024 Siripuram Vivek Vardhan. All rights reserved.</p>
+                <p class="text-xs text-neutral-600">Designed & built with <span class="text-orange-400">&hearts;</span> in India</p>
             </div>
         </div>
     </footer>
 
-    <!-- Toast -->
+    <!-- Toast Notification -->
     <div id="toast" class="toast fixed bottom-8 right-8 z-[70] glass-card rounded-2xl px-6 py-4 flex items-center gap-3 max-w-sm">
-        <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-4 h-4 text-green-400"></i></div>
-        <div><div class="text-sm font-medium">Message Sent!</div><div class="text-xs text-neutral-400">I'll get back to you soon.</div></div>
+        <div id="toastIcon" class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+            <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+        </div>
+        <div>
+            <div id="toastTitle" class="text-sm font-medium">Message Sent!</div>
+            <div id="toastDesc" class="text-xs text-neutral-400">I'll get back to you soon.</div>
+        </div>
     </div>
 
+    <!-- ==================== JAVASCRIPT ==================== -->
     <script>
+        // Initialize Lucide icons
         lucide.createIcons();
-        document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileNav').classList.add('open'));
-        document.getElementById('closeNav').addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
-        document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open')));
-        document.querySelectorAll('.tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.tab-content').forEach(tc=>tc.classList.add('hidden'));document.getElementById(`tab-${btn.dataset.tab}`).classList.remove('hidden')})});
-        document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('toast').classList.add('show');this.reset();setTimeout(()=>document.getElementById('toast').classList.remove('show'),4000)});
-        function animateCounter(el,target,suffix=''){let c=0;const step=Math.max(1,target/50);const iv=setInterval(()=>{c+=step;if(c>=target){c=target;clearInterval(iv)}el.textContent=Math.floor(c)+suffix},30)}
-        const canvas=document.getElementById('three-canvas'),renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});renderer.setSize(window.innerWidth,window.innerHeight);renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));const scene=new THREE.Scene();scene.fog=new THREE.FogExp2(0x050505,.003);const camera=new THREE.PerspectiveCamera(50,window.innerWidth/window.innerHeight,.1,1000);camera.position.set(0,0,18);const pc=4000,pos=new Float32Array(pc*3),col=new Float32Array(pc*3),R=5;for(let i=0;i<pc;i++){const phi=Math.acos(1-2*(i+.5)/pc),theta=Math.PI*(1+Math.sqrt(5))*i;pos[i*3]=R*Math.sin(phi)*Math.cos(theta);pos[i*3+1]=R*Math.sin(phi)*Math.sin(theta);pos[i*3+2]=R*Math.cos(phi);if(Math.random()<.05){col[i*3]=.976;col[i*3+1]=.451;col[i*3+2]=.086}else{const c=.267;col[i*3]=c;col[i*3+1]=c;col[i*3+2]=c}}const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));pg.setAttribute('color',new THREE.BufferAttribute(col,3));const particles=new THREE.Points(pg,new THREE.PointsMaterial({size:.035,vertexColors:true,transparent:true,opacity:.8,sizeAttenuation:true}));scene.add(particles);const am=new THREE.Mesh(new THREE.SphereGeometry(5.2,32,32),new THREE.ShaderMaterial({vertexShader:'varying vec3 vN;void main(){vN=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',fragmentShader:'varying vec3 vN;void main(){float i=pow(0.65-dot(vN,vec3(0,0,1)),2.0);gl_FragColor=vec4(0.976,0.451,0.086,1.0)*i*0.4;}',blending:THREE.AdditiveBlending,side:THREE.BackSide,transparent:true}));scene.add(am);for(let i=0;i<15;i++){const p1=new THREE.Vector3(R*Math.sin(Math.random()*Math.PI)*Math.cos(Math.random()*Math.PI*2),R*Math.sin(Math.random()*Math.PI)*Math.sin(Math.random()*Math.PI*2),R*Math.cos(Math.random()*Math.PI));const p2=new THREE.Vector3(R*Math.sin(Math.random()*Math.PI)*Math.cos(Math.random()*Math.PI*2),R*Math.sin(Math.random()*Math.PI)*Math.sin(Math.random()*Math.PI*2),R*Math.cos(Math.random()*Math.PI));const m=p1.clone().add(p2).multiplyScalar(.5).normalize().multiplyScalar(R*1.3);particles.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(new THREE.QuadraticBezierCurve3(p1,m,p2).getPoints(30)),new THREE.LineBasicMaterial({color:0xf97316,transparent:true,opacity:.08})))}let mx=0,my=0;document.addEventListener('mousemove',e=>{mx=(e.clientX/window.innerWidth-.5)*2;my=(e.clientY/window.innerHeight-.5)*2});(function animate(){requestAnimationFrame(animate);particles.rotation.y+=.002;particles.rotation.x=my*.1;particles.rotation.z=mx*.05;renderer.render(scene,camera)})();window.addEventListener('resize',()=>{camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth,window.innerHeight)});
-        gsap.registerPlugin(ScrollTrigger);document.querySelectorAll('.section-reveal').forEach(el=>{gsap.to(el,{opacity:1,y:0,filter:'blur(0px)',duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})});ScrollTrigger.create({trigger:'#statProjects',start:'top 90%',onEnter:()=>{animateCounter(document.getElementById('statProjects'),6,'+');animateCounter(document.getElementById('statRepos'),15,'+');animateCounter(document.getElementById('statTech'),18,'+')}});document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
-        fetch('https://api.github.com/users/thevivek143').then(r=>r.json()).then(d=>{if(d.public_repos)document.getElementById('ghRepos').textContent=d.public_repos}).catch(()=>{});fetch('https://api.github.com/users/thevivek143/repos?per_page=100&sort=updated').then(r=>r.json()).then(repos=>{if(!Array.isArray(repos))return;document.getElementById('ghStars').textContent=repos.reduce((s,r)=>s+(r.stargazers_count||0),0);document.getElementById('ghLangs').textContent=new Set(repos.map(r=>r.language).filter(Boolean)).size}).catch(()=>{});
+
+        // ── Mobile Navigation ──
+        var mobileNav = document.getElementById('mobileNav');
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            mobileNav.classList.add('open');
+        });
+        document.getElementById('closeNav').addEventListener('click', function() {
+            mobileNav.classList.remove('open');
+        });
+        document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+            });
+        });
+
+        // ── Skills Tabs ──
+        document.querySelectorAll('.tab-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                document.querySelectorAll('.tab-content').forEach(function(tc) { tc.classList.add('hidden'); });
+                document.getElementById('tab-' + btn.dataset.tab).classList.remove('hidden');
+            });
+        });
+
+        // ── Contact Form ──
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    showToast('Message Sent!', "I'll get back to you soon.", 'success');
+                    form.reset();
+                } else {
+                    showToast('Oops! Something went wrong.', 'Please try again or email directly.', 'error');
+                }
+            })
+            .catch(function() {
+                showToast('Network error.', 'Please try again or email directly.', 'error');
+            });
+        });
+
+        function showToast(title, desc, type) {
+            var toast = document.getElementById('toast');
+            var icon = document.getElementById('toastIcon');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastDesc').textContent = desc;
+
+            if (type === 'error') {
+                icon.className = 'w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center shrink-0';
+                icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+            } else {
+                icon.className = 'w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center shrink-0';
+                icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+            }
+
+            toast.classList.add('show');
+            setTimeout(function() { toast.classList.remove('show'); }, 4000);
+        }
+
+        // ── Animated Counter ──
+        function animateCounter(el, target, suffix) {
+            suffix = suffix || '';
+            var current = 0;
+            var step = Math.max(1, target / 50);
+            var interval = setInterval(function() {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                el.textContent = Math.floor(current) + suffix;
+            }, 30);
+        }
+
+        // ── Three.js Particle Sphere ──
+        var canvas = document.getElementById('three-canvas');
+        var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        var scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x050505, 0.003);
+
+        var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 0, 18);
+
+        // Particle sphere
+        var particleCount = 4000;
+        var positions = new Float32Array(particleCount * 3);
+        var colors = new Float32Array(particleCount * 3);
+        var R = 5;
+
+        for (var i = 0; i < particleCount; i++) {
+            var phi = Math.acos(1 - 2 * (i + 0.5) / particleCount);
+            var theta = Math.PI * (1 + Math.sqrt(5)) * i;
+            positions[i * 3]     = R * Math.sin(phi) * Math.cos(theta);
+            positions[i * 3 + 1] = R * Math.sin(phi) * Math.sin(theta);
+            positions[i * 3 + 2] = R * Math.cos(phi);
+
+            if (Math.random() < 0.05) {
+                colors[i * 3] = 0.976; colors[i * 3 + 1] = 0.451; colors[i * 3 + 2] = 0.086;
+            } else {
+                var c = 0.267;
+                colors[i * 3] = c; colors[i * 3 + 1] = c; colors[i * 3 + 2] = c;
+            }
+        }
+
+        var particleGeometry = new THREE.BufferGeometry();
+        particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        var particles = new THREE.Points(particleGeometry, new THREE.PointsMaterial({
+            size: 0.035,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8,
+            sizeAttenuation: true
+        }));
+        scene.add(particles);
+
+        // Atmosphere mesh (fresnel glow)
+        var atmosphereMesh = new THREE.Mesh(
+            new THREE.SphereGeometry(5.2, 32, 32),
+            new THREE.ShaderMaterial({
+                vertexShader: 'varying vec3 vN; void main() { vN = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+                fragmentShader: 'varying vec3 vN; void main() { float i = pow(0.65 - dot(vN, vec3(0, 0, 1)), 2.0); gl_FragColor = vec4(0.976, 0.451, 0.086, 1.0) * i * 0.4; }',
+                blending: THREE.AdditiveBlending,
+                side: THREE.BackSide,
+                transparent: true
+            })
+        );
+        scene.add(atmosphereMesh);
+
+        // Orbital arcs — FIXED: added to scene instead of particles
+        for (var j = 0; j < 15; j++) {
+            var p1 = new THREE.Vector3(
+                R * Math.sin(Math.random() * Math.PI) * Math.cos(Math.random() * Math.PI * 2),
+                R * Math.sin(Math.random() * Math.PI) * Math.sin(Math.random() * Math.PI * 2),
+                R * Math.cos(Math.random() * Math.PI)
+            );
+            var p2 = new THREE.Vector3(
+                R * Math.sin(Math.random() * Math.PI) * Math.cos(Math.random() * Math.PI * 2),
+                R * Math.sin(Math.random() * Math.PI) * Math.sin(Math.random() * Math.PI * 2),
+                R * Math.cos(Math.random() * Math.PI)
+            );
+            var mid = p1.clone().add(p2).multiplyScalar(0.5).normalize().multiplyScalar(R * 1.3);
+            var curve = new THREE.QuadraticBezierCurve3(p1, mid, p2);
+            var lineGeometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(30));
+            var lineMaterial = new THREE.LineBasicMaterial({ color: 0xf97316, transparent: true, opacity: 0.08 });
+            scene.add(new THREE.Line(lineGeometry, lineMaterial));
+        }
+
+        // Mouse tracking
+        var mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', function(e) {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            particles.rotation.y += 0.002;
+            particles.rotation.x = mouseY * 0.1;
+            particles.rotation.z = mouseX * 0.05;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle resize
+        window.addEventListener('resize', function() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ── GSAP Scroll Reveals ──
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('.section-reveal').forEach(function(el) {
+            gsap.to(el, {
+                opacity: 1,
+                y: 0,
+                filter: 'blur(0px)',
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+
+        // Hero stat counters on scroll
+        ScrollTrigger.create({
+            trigger: '#statProjects',
+            start: 'top 90%',
+            onEnter: function() {
+                animateCounter(document.getElementById('statProjects'), 6, '+');
+                animateCounter(document.getElementById('statRepos'), 15, '+');
+                animateCounter(document.getElementById('statTech'), 18, '+');
+            }
+        });
+
+        // ── Smooth Scroll with Nav Offset ──
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    var navHeight = 80;
+                    var top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ── GitHub API with Fallback ──
+        fetch('https://api.github.com/users/thevivek143')
+            .then(function(response) {
+                if (!response.ok) throw new Error('Rate limited or error');
+                return response.json();
+            })
+            .then(function(data) {
+                if (data.public_repos) {
+                    document.getElementById('ghRepos').textContent = data.public_repos;
+                }
+            })
+            .catch(function() {
+                document.getElementById('ghRepos').textContent = '15';
+                document.getElementById('ghStars').textContent = '—';
+                document.getElementById('ghLangs').textContent = '—';
+            });
+
+        fetch('https://api.github.com/users/thevivek143/repos?per_page=100&sort=updated')
+            .then(function(response) {
+                if (!response.ok) throw new Error('Rate limited or error');
+                return response.json();
+            })
+            .then(function(repos) {
+                if (!Array.isArray(repos)) return;
+                var totalStars = repos.reduce(function(sum, r) { return sum + (r.stargazers_count || 0); }, 0);
+                var langCount = new Set(repos.map(function(r) { return r.language; }).filter(Boolean)).size;
+                document.getElementById('ghStars').textContent = totalStars;
+                document.getElementById('ghLangs').textContent = langCount;
+            })
+            .catch(function() {
+                // Stats already have "—" as default, leave them
+            });
     </script>
 </body>
 </html>
