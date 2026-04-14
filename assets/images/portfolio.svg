@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <radialGradient id="portGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#050505" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="#050505"/>
+  <rect width="800" height="500" fill="url(#portGrad)"/>
+  
+  <g fill="#f97316" stroke="none">
+    <circle cx="100" cy="150" r="3" opacity="0.6"/>
+    <circle cx="350" cy="80" r="2" opacity="0.4"/>
+    <circle cx="650" cy="200" r="4" opacity="0.8"/>
+    <circle cx="550" cy="400" r="2.5" opacity="0.5"/>
+    <circle cx="200" cy="350" r="3.5" opacity="0.7"/>
+    <circle cx="750" cy="300" r="1.5" opacity="0.3"/>
+  </g>
+  
+  <circle cx="400" cy="250" r="150" fill="none" stroke="#f97316" stroke-width="1" stroke-dasharray="8,8" opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="0 400 250" to="360 400 250" dur="20s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="400" cy="250" r="100" fill="none" stroke="#fb923c" stroke-width="2" opacity="0.5"/>
+  
+  <circle cx="400" cy="250" r="50" fill="#fef08a" opacity="0.1"/>
+  <circle cx="400" cy="250" r="40" fill="#f97316" opacity="0.8">
+    <animate attributeName="r" values="38;42;38" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <path d="M300,250 L500,250 M400,150 L400,350" stroke="#fed7aa" stroke-width="1" opacity="0.4"/>
+  
+  <g font-family="sans-serif" font-weight="bold" font-size="24" fill="#fff" opacity="0.9">
+    <text x="382" y="258">V</text>
+  </g>
+</svg>

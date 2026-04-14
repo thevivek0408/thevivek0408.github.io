@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <radialGradient id="meshGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#be185d" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="#0f172a"/>
+  <rect width="800" height="500" fill="url(#meshGrad)"/>
+  
+  <g fill="none" stroke="#ec4899" stroke-width="1.5" opacity="0.4" transform="translate(100,0)">
+    <path d="M200,100 Q400,300 600,100" />
+    <path d="M200,150 Q400,350 600,150" />
+    <path d="M200,200 Q400,400 600,200" />
+    <path d="M200,250 Q400,450 600,250" />
+    <path d="M200,300 Q400,500 600,300" />
+    
+    <path d="M200,100 Q300,300 200,450" />
+    <path d="M300,100 Q400,300 300,450" />
+    <path d="M400,100 Q500,300 400,450" />
+    <path d="M500,100 Q600,300 500,450" />
+    <path d="M600,100 Q700,300 600,450" />
+  </g>
+  <g fill="#fdf2f8" stroke="#f472b6" stroke-width="3" opacity="0.8">
+    <circle cx="450" cy="250" r="100" fill="transparent" stroke-dasharray="15,10" />
+    <circle cx="450" cy="250" r="120" fill="transparent" stroke-dasharray="2,8" opacity="0.5"/>
+  </g>
+  <g fill="#fdf2f8" font-family="sans-serif" font-size="28" font-weight="bold" opacity="0.9">
+    <text x="350" y="260">VIRTUAL</text>
+  </g>
+</svg>
